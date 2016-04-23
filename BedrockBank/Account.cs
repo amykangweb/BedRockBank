@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +28,12 @@ namespace BedrockBank
         /// <summary>
         /// Account number for the account
         /// </summary>
+        [Key]
         public int AccountNumber { get; private set; }
         /// <summary>
         /// Name of the account
         /// </summary>
+        [StringLength(10, ErrorMessage = "Account name cannot be more than 10 characters in length.")]
         public string AccountName { get; set; }
         public int SSN { get; set; }
         public double Balance { get; private set; }
