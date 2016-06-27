@@ -38,6 +38,10 @@ namespace BedrockBank
         public int SSN { get; set; }
         public double Balance { get; private set; }
         public AccountType TypeOfAccount { get; set; }
+        // Belongs to Customer
+        // Every relationship must be verified that parent exists.
+        // Entity Framework automatically verifies record exists.
+        public virtual Customer Customer { get; set; }
 
         #endregion
 
